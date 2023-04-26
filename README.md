@@ -6,7 +6,9 @@
 
 3. Install the MongoDb Database  and create Three table.
       > MovieName
+      > 
       > UserName
+      > 
       > UserData
  
 4. Change NAME to 'Your_Database_NAme' in Your Setting.py
