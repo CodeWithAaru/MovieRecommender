@@ -4,11 +4,10 @@
 
 2. open the extracted folder in your IDE(for me - Visual Studio Code).
 
-3. Install the MongoDb Database  and create Three table. 
-
-      1.MovieName
-      2.UserName
-      3.UserData
+3. Install the MongoDb Database  and create Three table.
+      > MovieName
+      > UserName
+      > UserData
  
 4. Change NAME to 'Your_Database_NAme' in Your Setting.py
 
