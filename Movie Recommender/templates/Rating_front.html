@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+
+  <style>
+    table, th, td {
+       border:1px solid green;
+       padding:3px;
+       
+       
+    }
+    table { width: 100%; }
+    
+    td { 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+        word-wrap: break-word;
+    }
+ </style>
+</head>
+<body>
+    <br>
+    <div style="text-align: center; ">
+   <form method='POST' action="{% url 'submitData' %}">
+    {% csrf_token %}
+    <label for="name">Select User Name</label>
+    <select id="user_name" name="user_name" style="padding: 10px; background:#edf2ff; border:none;">
+        {% for name in UserName %}
+        <option value= {{name.user_name}}>{{name.user_name}}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <br>
+
+    <label for="name">Choose a movie:</label>
+    <select id="movie_name" name="movie_name" style="padding: 10px; background:#edf2ff; border:none;">
+        {% for name in MovieName %}
+            <option value="{{ name.movie_name }}">{{ name.movie_name }}</option>
+        {% endfor %}
+    </select>
+
+    <br>
+    <br>
+    <label for="name">Rating</label>
+    <select id="Rating" name="Rating" style="padding: 10px; background:#edf2ff; border:none;">
+        <option value= 1>1 Star</option>
+        <option value= 2>2 Star</option>
+        <option value= 3>3 Star</option>
+        <option value= 4>4 Star</option>
+        <option value= 5>5 Star</option>
+    </select>
+
+    <br>
+    <br>
+    <br>
+    <button type="submit" style ="background-color: #008CBA; padding : 10px">SUBMIT DATAT</button>
+    
+</form>
+<br>
+<button type="button" style ="background-color: #008CBA; padding : 10px">
+    <a href="{% url 'add_movie' %}">Add Movie</a>
+</button>
+<br>
+<br>
+<div>
+    <button type="submit" style ="background-color: #008CBA; padding : 10px">
+        <a href="{% url 'add_user' %}">Add User</a>
+    </button>
+
+</div>
+<br>
+<br>
+<div>
+    <button type="submit" style ="background-color: #008CBA; padding : 10px">
+        <a href="{% url 'recommend_movie' %}">Recommend Movie</a>
+    </button>
+    </div>
+
+
+
+<br>
+<br>
+<br>
+<div>
+   
+    <table>
+      <tr>
+         <th>_id</th>
+         <th>User_Name</th>
+         <th>Movie_Name</th>
+         <th>Rating</th>
+      </tr>
+      
+        {% for record in data %}
+        <tr>
+        <td>{{ record.id }}</td>
+        <td>{{ record.uname}}</td>
+        <td>{{ record.mname}}</td>       
+        <td>{{ record.rating}}</td>
+        </tr>
+     {% endfor %}
+    </table>
+  </div>
+
+        
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+</style>
+</head>
+<body>
+    <br>
+    <div style="text-align: center; ">
+        <form method='POST' action="{% url 'find_movie' %}">
+            <label for="name">Your UserName</label>
+            <select id="user_name" name="user_name" style="padding: 10px; background:#edf2ff; border:none;" onchange="this.form.submit()" {% if not reset %} disabled {% endif %}>
+                {% for user in data1 %}
+                <option value="{{ user.uname }}" selected>{{ user.uname }}</option>
+                {% endfor %}
+                <option value="{{ name }} " selected hidden>{{ name }}</option>
+            </select>
+            {% csrf_token %}
+        </form>
+        <form method='POST' action="{% url 'recommend_movie_display' %}">
+            {% csrf_token %}
+            <br>
+            <br>
+            <div id="movie-name-field" >
+                <label for="name">Movie Name</label>
+                <select id="movie_name" name="movie_name" style="padding: 10px; background:#edf2ff; border:none;">
+                    {% for movie in data %}
+                        <option value="{{ movie.name }}">{{ movie.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <br>
+            <br>
+            <button type="submit" style ="background-color: #008CBA; padding : 10px" id="recommend-movie-btn">Recommend Movies</button>
+
+            <input type="hidden" name="selected_user" value="{{ selected_user }}">
+
+            <button type="reset" style ="background-color: #FF0000; padding : 10px" onclick="document.getElementById('user_name').disabled = false; document.getElementById('movie-name-field').style.display = 'none'; document.getElementById('recommend-movie-btn').disabled = true;">Reset</button>
+            <input type="hidden" name="reset" value="True">
+        </form>
+    </div>
+</body>
+</html>

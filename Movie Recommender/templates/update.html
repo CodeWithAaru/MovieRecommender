@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DataBase Connectivity form</title>
+</head>
+<body>
+	<div>
+		<form action="{% url 'delet'  %}" method="POST">
+      {% csrf_token %}
+			<fieldset>
+      <legend>delet the entry</legend>
+      <br>
+
+        <label>Enter the name which you want to delet</label><br>  
+        <input type="text" name="name"><br>  
+        
+         <input type="submit" value="sign-up">  
+
+ 
+     </fieldset>
+		</form>
+	</div>  
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+</head>
+<body>
+    <br>
+    <div style="text-align: center; ">
+   <form method="GET" action="{% url 'Results' %}">
+    {% csrf_token %}
+    <label for="name">Choose a movie:</label>
+    <select id="name" name="name" style="padding: 10px; background:#edf2ff; border:none;">
+        {% for option in title %}
+            <option value="{{ option }}">{{ option }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button type="submit" style ="background-color: #008CBA; padding : 10px">Recommend</button>
+</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="text-align: center;">
+    <table align="center" style="margin: 0px auto;">
+        <tr>
+
+        <th>
+            
+        {% for aryan in name%}
+            <h3>{{aryan}}</h3>
+        {%endfor%}
+        </th>
+        <th>
+            
+        {% for genre in genres%}
+            <h3>| {{genre}} | </h3>
+        {% endfor %}
+        </th>
+        </tr>
+    </table>
+
+        
+</form>
+</body>
+</html>

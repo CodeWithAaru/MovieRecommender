@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+</style>
+</head>
+<body>
+    <br>
+    <div style="text-align: center; ">
+        <form  method='POST' action="{% url 'find_movie' %}">
+            {% csrf_token %}
+            <label for="name">User Name</label>
+            <select id="user_name" name="user_name" style="padding: 10px; background:#edf2ff; border:none;">
+                {% for name in data %}
+                <option value= {{name.uname}}>{{name.uname}}</option>
+                {% endfor %}
+            </select>
+            {% comment %} <br>
+            <br>
+         <label for="name">Movie Name</label>
+            <select id="movie_id" name="movie_id" style="padding: 10px; background:#edf2ff; border:none;">
+                {% for id in movieid %}
+                <option value= {{id}}>{{id}}</option>
+                {% endfor %}
+            </select> {% endcomment %}
+            <br>
+            <br> 
+            <button type="submit" style ="background-color: #008CBA; padding : 10px">Find Movies</button>
+            {% comment %} <a href="{% url 'find_movie' %}"></a>  {% endcomment %}
+        </form>
+        <br>
+        <br>
+        {% comment %} <button type="button" style ="background-color: #008CBA; padding : 10px">
+            <a href="{% url 'redirect_to_rate' %}">Rate Movie</a>
+        </button> {% endcomment %}
+    </div>
+
+    <br>
+    <br>
+    <div style="text-align:center;">
+    {% for name in name %}
+    <h2> {{name}}</h2>
+        {% endfor %}
+    </div>
+        
+</body>
+</html>

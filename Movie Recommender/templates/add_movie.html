@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+</style>
+</head>
+<body>
+    <br>
+    <div style="text-align: center; ">
+        <form method='POST' action="{% url 'AddMovieName' %}" >
+            {% csrf_token %}
+            <label for="name">Enter The Movie Name</label>
+            <input type="text" name="movie_name"  style="padding: 10px; background:#edf2ff; border:none;" required>
+            <br>
+            <br>
+            <button type="submit" style ="background-color: #008CBA; padding : 10px">SUBMIT DATA</button>
+        </form>
+    </div>
+</body>
+</html>
