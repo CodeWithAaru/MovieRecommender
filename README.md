@@ -1,6 +1,6 @@
 # MovieRecommender
 
-1.First Download The the Zip File and extrzct it.
+1.First Download The the Zip File and extract it.
 
 2. open the extracted folder in your IDE(for me - Visual Studio Code).
 
