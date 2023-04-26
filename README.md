@@ -1,4 +1,4 @@
-# MovieRecommender
+# MovieRecommenderSystem
 
 1.First Download The the Zip File and extract it.
 
@@ -26,6 +26,5 @@
   6. Run Command python manage.py runserver    
       > It gives you a link with your Localhost Adress simply click on that.
       
->----------------------------Congratulation----------------------------
->
->-----You Succesfully Runned Your Movie Recommender System-----
+# Congratulation
+# You Succesfully Runned Your Movie Recommender System
