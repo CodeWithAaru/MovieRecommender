@@ -26,5 +26,5 @@
   6. Run Command python manage.py runserver    
       > It gives you a link with your Localhost Adress simply click on that.
       
-# Congratulation
+# Congratulation 🎉🎉🎉
 # You Succesfully Runned Your Movie Recommender System
