@@ -16,8 +16,7 @@
   DATABASES = {
       'default': {
           'ENGINE': 'djongo',
-          'NAME': 'Your Database Name',
-        
+          'NAME': 'Your Database Name',  
       }
   }
   
